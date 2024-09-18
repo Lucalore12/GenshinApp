@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    
+<h1>
+    Crear Usuario
+</h1>
+{{error}}
+<form  method="post">
+{% csrf_token %}
+{{form.as_p}}
+{{errorPassword}}
+<button>
+    Crear
+</button>
+</form>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1>Personajes Creados</h1>
+
+<div class="Personaje">
+  {% for Personaje in Personajes %}
+  <div class="container">
+    <Div class="{{Personaje.vision}}">
+      <img class="imagen-personajes" src="/media/images/{{ Personaje.img }}" alt="{{Personaje.nombre}}">
+      <h1>{{Personaje.nombre}}</h1>
+      <h2>Vision:</h2><p>{{Personaje.vision}}</p>
+      <a href="{% url 'modificar' Personaje.pk %}">Modificar</a>
+      <a href="{% url 'eliminar' Personaje.pk %}">Eliminar</a>
+    </Div>
+  </div>
+  {% endfor %}
+</div>
+
+
+{% endblock %}

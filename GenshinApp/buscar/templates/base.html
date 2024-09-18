@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Genshin Impact Aplicacion</title>
+</head>
+<body>
+    <ul>
+        <li>
+            <a href="/">Inicio</a>
+        </li>
+        <li>
+            <a href="/buscar">Buscar Personajes</a>
+        </li>
+        {% if user.is_authenticated %}
+        <li>
+            <a href="/logout">Cerrar Sesion</a>
+        </li>
+        <li>
+            <a href="/create">Agregar Personajes</a>
+        </li>
+        <li>
+            <a href="/personajes_creados">Personajes Creados</a>
+        </li>
+        {% else %}
+        <li>
+            <a href="/login">Iniciar Sesion</a>
+        </li>
+        <li>
+            <a href="/signup">Registrarse</a>
+        </li>
+        {% endif %}
+        
+    </ul>
+    {% block content %}
+    
+    {% endblock %}
+</body>
+</html>

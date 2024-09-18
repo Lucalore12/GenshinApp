@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{personaje.nombre}}</h1>
+<img src="/media/images/{{ personaje.img }}" alt="{{personaje.nombre}}">
+<h1>Descripcion del Personaje</h1>
+<p>{{personaje.decripcion}}</p>
+<h1>Elemental: {{personaje.elemental}}</h1>
+<p>{{personaje.decripcion_elemental}}</p>
+<h1>Ultimate: {{personaje.ultimate}}</h1>
+<p>{{personaje.decripcion_ultimate}}</p>
+{% endblock %}

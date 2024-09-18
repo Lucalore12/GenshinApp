@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Buscar</button>
+</form>
+<h1>Resultados de la búsqueda</h1>
+<ul>
+    {% for personaje in resultados %}
+        <li>{{ personaje.nombre }}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
